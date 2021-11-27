@@ -1,8 +1,8 @@
 package com.bl;
 
 public class Maximum {
-	public static Integer findMaximumNumber(Integer x, Integer y, Integer z) {
-		Integer max = x;
+	public static Double findMaximumNumber(Double x, Double y, Double z) {
+		Double max = x;
 		if (y.compareTo(max) > 0) {
 			max = y;
 		}
@@ -13,6 +13,6 @@ public class Maximum {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Maximum Number:" + findMaximumNumber(26, 96, 52));
+		System.out.println("Maximum Number:" + findMaximumNumber(26.99, 16.58, 52.35));
 	}
 }

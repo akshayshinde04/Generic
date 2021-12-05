@@ -1,18 +1,34 @@
 package com.bl;
 
-public class Maximum {
-	public static Double findMaximumNumber(Double x, Double y, Double z) {
-		Double max = x;
-		if (y.compareTo(max) > 0) {
-			max = y;
-		}
-		if (z.compareTo(max) > 0) {
-			max = z;
-		}
-		return max;
+import java.util.Arrays;
+
+public class Maximum<T extends Comparable<T>> {
+	public static void main(String[] args) {
+		Integer[] intArr = { 19, 1339, 999, 995 };
+		Float[] floatArr = { 15.55f, 14.65f, 15.22f };
+		String[] strArr = { "RAMESH", "Ramesh", "ramesh" };
+
+		// call generic method
+		findMax(intArr);
+		findMax(floatArr);
+		findMax(strArr);
 	}
 
-	public static void main(String[] args) {
-		System.out.println("Maximum Number:" + findMaximumNumber(26.99, 16.58, 52.35));
+	// method to find max value
+	public static <E extends Comparable<E>> void findMax(E[] arr) {
+
+		E maximum = arr[0];
+		for (int i = 1; i < arr.length; i++) {
+			if (maximum.compareTo(arr[i]) < 0) {
+				maximum = arr[i];
+			}
+		}
+		printMax(maximum);
+	}
+
+	// print method to print the obtained max value
+	public static <E> void printMax(E max) {
+		System.out.println("Among the three the maximum is " + max);
 	}
 }
+	
